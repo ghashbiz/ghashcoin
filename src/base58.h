@@ -277,7 +277,8 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 62, // addresses start with S
+        // https://en.bitcoin.it/wiki/Base58Check_encoding
+        PUBKEY_ADDRESS = 15, // addresses start with G
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 111,
         SCRIPT_ADDRESS_TEST = 196,

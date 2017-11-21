@@ -828,7 +828,7 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 4 * COIN;
+    int64 nSubsidy = 1 * COIN; // Number of coins per block awarded
 
 
     if(nHeight < 17280) // no block reward within the first 3 days
@@ -839,8 +839,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 0.35 * 24 * 60 * 60; // GhashCoin: 0.35 days
-static const int64 nTargetSpacing = 15; // GhashCoin: 15 seconds
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // FooCoin: 1 days
+static const int64 nTargetSpacing = 120; // GhashCoin: 2 minute blocks (How *should* blocks be found and how often difficulty retargets)
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix

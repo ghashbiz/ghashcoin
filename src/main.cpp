@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("dbf73183ba34971a353eb9df8b88adb532174548057d3d35d137c55c4e4d5f7e");
+uint256 hashGenesisBlock("432f0603408e12d933f5bac59a731032fef5ff638d8dbb750e83ee49a12334ec");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1987,7 +1987,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb8;
         pchMessageStart[3] = 0xdb;
-        hashGenesisBlock = uint256("dbf73183ba34971a353eb9df8b88adb532174548057d3d35d137c55c4e4d5f7e");
+        hashGenesisBlock = uint256("432f0603408e12d933f5bac59a731032fef5ff638d8dbb750e83ee49a12334ec");
     }
 
     //
@@ -2031,14 +2031,14 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1511258325; //epochtime
+        block.nTime    = 1511270528; //epochtime
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 388429910;
+        block.nNonce   = 388942185;
 
         if (fTestNet)
         {
-            block.nTime    = 1511258325; //epochtime
-            block.nNonce   = 388429910;
+            block.nTime    = 1511270528; //epochtime
+            block.nNonce   = 388942185;
         }
 
         //// debug print
@@ -2048,7 +2048,7 @@ bool LoadBlockIndex(bool fAllowNew)
         assert(block.hashMerkleRoot == uint256("5a2e19825b4162f68602039040f1e05d9f924ff00a3aff7327ca6abd6f3279bc"));
 
         // If genesis block hash does not match, then generate new genesis hash.
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
